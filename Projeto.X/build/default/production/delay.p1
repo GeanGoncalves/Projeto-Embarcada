@@ -1,0 +1,74 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"4 delay.c
+[; ;delay.c: 4: void tempo(unsigned char x) {
+[v _tempo `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _tempo ]
+[v _x `uc ~T0 @X0 1 r1 ]
+[f ]
+"5
+[; ;delay.c: 5:     volatile unsigned char j, k, m, n;
+[v _j `Vuc ~T0 @X0 1 a ]
+[v _k `Vuc ~T0 @X0 1 a ]
+[v _m `Vuc ~T0 @X0 1 a ]
+[v _n `Vuc ~T0 @X0 1 a ]
+"6
+[; ;delay.c: 6:     for (n = 0; n < x; n++) {
+{
+[e = _n -> -> 0 `i `uc ]
+[e $U 6  ]
+[e :U 3 ]
+{
+"7
+[; ;delay.c: 7:         for (m = 0; m < 100; m++) {
+{
+[e = _m -> -> 0 `i `uc ]
+[e $ < -> _m `i -> 100 `i 7  ]
+[e $U 8  ]
+[e :U 7 ]
+{
+"8
+[; ;delay.c: 8:             for (j = 0; j < 41; j++) {
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 41 `i 10  ]
+[e $U 11  ]
+[e :U 10 ]
+{
+"9
+[; ;delay.c: 9:                 for (k = 0; k < 3; k++);
+{
+[e = _k -> -> 0 `i `uc ]
+[e $ < -> _k `i -> 3 `i 13  ]
+[e $U 14  ]
+[e :U 13 ]
+[e ++ _k -> -> 1 `i `Vuc ]
+[e $ < -> _k `i -> 3 `i 13  ]
+[e :U 14 ]
+}
+"10
+[; ;delay.c: 10:             }
+}
+[e ++ _j -> -> 1 `i `Vuc ]
+[e $ < -> _j `i -> 41 `i 10  ]
+[e :U 11 ]
+}
+"11
+[; ;delay.c: 11:         }
+}
+[e ++ _m -> -> 1 `i `Vuc ]
+[e $ < -> _m `i -> 100 `i 7  ]
+[e :U 8 ]
+}
+"12
+[; ;delay.c: 12:     }
+}
+[e ++ _n -> -> 1 `i `Vuc ]
+[e :U 6 ]
+[e $ < -> _n `i -> _x `i 3  ]
+[e :U 4 ]
+}
+"13
+[; ;delay.c: 13: }
+[e :UE 2 ]
+}

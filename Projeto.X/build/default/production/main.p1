@@ -1,0 +1,939 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"37 ./lcd.h
+[; ;./lcd.h: 37:  void lcdInit(void);
+[v _lcdInit `(v ~T0 @X0 0 ef ]
+"38
+[; ;./lcd.h: 38:     void lcdPosition(unsigned char linha, unsigned char coluna);
+[v _lcdPosition `(v ~T0 @X0 0 ef2`uc`uc ]
+"36
+[; ;./lcd.h: 36:  void lcdData(unsigned char valor);
+[v _lcdData `(v ~T0 @X0 0 ef1`uc ]
+"26 ./atraso.h
+[; ;./atraso.h: 26: void atraso_ms(unsigned int valor);
+[v _atraso_ms `(v ~T0 @X0 0 ef1`ui ]
+"33 ./lcd.h
+[; ;./lcd.h: 33:     void lcd_cmd(unsigned char val);
+[v _lcd_cmd `(v ~T0 @X0 0 ef1`uc ]
+[p mainexit ]
+"25 ./keypad.h
+[; ;./keypad.h: 25:  void kpInit(void);
+[v _kpInit `(v ~T0 @X0 0 ef ]
+"24
+[; ;./keypad.h: 24:  void kpDebounce(void);
+[v _kpDebounce `(v ~T0 @X0 0 ef ]
+"23
+[; ;./keypad.h: 23:  unsigned int kpRead(void);
+[v _kpRead `(ui ~T0 @X0 0 ef ]
+"26 ./pwm.h
+[; ;./pwm.h: 26:  void pwmInit(void);
+[v _pwmInit `(v ~T0 @X0 0 ef ]
+"23
+[; ;./pwm.h: 23:  void pwmSet1(unsigned char porcento);
+[v _pwmSet1 `(v ~T0 @X0 0 ef1`uc ]
+"4 ./delay.h
+[; ;./delay.h: 4: void tempo(unsigned char);
+[v _tempo `(v ~T0 @X0 0 ef1`uc ]
+"25 ./pwm.h
+[; ;./pwm.h: 25:  void pwmFrequency(unsigned int freq);
+[v _pwmFrequency `(v ~T0 @X0 0 ef1`ui ]
+"38 ./config.h
+[p x MCLRE=ON                 ]
+"39
+[p x OSC=HS                   ]
+"40
+[p x WDT=OFF                  ]
+"41
+[p x LVP=OFF                  ]
+"42
+[p x DEBUG  =  OFF              ]
+"43
+[p x WDTPS  =  1                ]
+"17 main.c
+[; ;main.c: 17: void inicio(void) {
+[v _inicio `(v ~T0 @X0 1 ef ]
+{
+[e :U _inicio ]
+[f ]
+"18
+[; ;main.c: 18:     lcdInit();
+[e ( _lcdInit ..  ]
+"19
+[; ;main.c: 19:     lcdPosition(1, 5);
+[e ( _lcdPosition (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+"20
+[; ;main.c: 20:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"21
+[; ;main.c: 21:     lcdData('r');
+[e ( _lcdData (1 -> -> 114 `ui `uc ]
+"22
+[; ;main.c: 22:     lcdData('i');
+[e ( _lcdData (1 -> -> 105 `ui `uc ]
+"23
+[; ;main.c: 23:     lcdData('l');
+[e ( _lcdData (1 -> -> 108 `ui `uc ]
+"24
+[; ;main.c: 24:     lcdData('l');
+[e ( _lcdData (1 -> -> 108 `ui `uc ]
+"26
+[; ;main.c: 26:     lcdPosition(2, 4);
+[e ( _lcdPosition (2 , -> -> 2 `i `uc -> -> 4 `i `uc ]
+"27
+[; ;main.c: 27:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"28
+[; ;main.c: 28:     lcdData('l');
+[e ( _lcdData (1 -> -> 108 `ui `uc ]
+"29
+[; ;main.c: 29:     lcdData('e');
+[e ( _lcdData (1 -> -> 101 `ui `uc ]
+"30
+[; ;main.c: 30:     lcdData('t');
+[e ( _lcdData (1 -> -> 116 `ui `uc ]
+"31
+[; ;main.c: 31:     lcdData('r');
+[e ( _lcdData (1 -> -> 114 `ui `uc ]
+"32
+[; ;main.c: 32:     lcdData('i');
+[e ( _lcdData (1 -> -> 105 `ui `uc ]
+"33
+[; ;main.c: 33:     lcdData('c');
+[e ( _lcdData (1 -> -> 99 `ui `uc ]
+"34
+[; ;main.c: 34:     lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"35
+[; ;main.c: 35:     atraso_ms(3500);
+[e ( _atraso_ms (1 -> -> 3500 `i `ui ]
+"36
+[; ;main.c: 36:     lcd_cmd(0x01);
+[e ( _lcd_cmd (1 -> -> 1 `i `uc ]
+"38
+[; ;main.c: 38: }
+[e :UE 1 ]
+}
+"40
+[; ;main.c: 40: void impressao(void) {
+[v _impressao `(v ~T0 @X0 1 ef ]
+{
+[e :U _impressao ]
+[f ]
+"41
+[; ;main.c: 41:     lcdInit();
+[e ( _lcdInit ..  ]
+"42
+[; ;main.c: 42:     lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"43
+[; ;main.c: 43:     {
+{
+"44
+[; ;main.c: 44:         lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"45
+[; ;main.c: 45:         lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"46
+[; ;main.c: 46:         lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"47
+[; ;main.c: 47:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"48
+[; ;main.c: 48:         lcdData('r');
+[e ( _lcdData (1 -> -> 114 `ui `uc ]
+"49
+[; ;main.c: 49:         lcdData('n');
+[e ( _lcdData (1 -> -> 110 `ui `uc ]
+"50
+[; ;main.c: 50:         lcdData('e');
+[e ( _lcdData (1 -> -> 101 `ui `uc ]
+"51
+[; ;main.c: 51:         lcdData(' ');
+[e ( _lcdData (1 -> -> 32 `ui `uc ]
+"52
+[; ;main.c: 52:         lcdData('d');
+[e ( _lcdData (1 -> -> 100 `ui `uc ]
+"53
+[; ;main.c: 53:         lcdData('e');
+[e ( _lcdData (1 -> -> 101 `ui `uc ]
+"54
+[; ;main.c: 54:         lcdData(' ');
+[e ( _lcdData (1 -> -> 32 `ui `uc ]
+"55
+[; ;main.c: 55:         lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"56
+[; ;main.c: 56:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"57
+[; ;main.c: 57:         lcdData('r');
+[e ( _lcdData (1 -> -> 114 `ui `uc ]
+"58
+[; ;main.c: 58:         lcdData('c');
+[e ( _lcdData (1 -> -> 99 `ui `uc ]
+"59
+[; ;main.c: 59:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"60
+[; ;main.c: 60:     }
+}
+"62
+[; ;main.c: 62:     lcdPosition(1, 0);
+[e ( _lcdPosition (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"63
+[; ;main.c: 63:     {
+{
+"64
+[; ;main.c: 64:         lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"65
+[; ;main.c: 65:         lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"66
+[; ;main.c: 66:         lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"67
+[; ;main.c: 67:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"68
+[; ;main.c: 68:         lcdData('r');
+[e ( _lcdData (1 -> -> 114 `ui `uc ]
+"69
+[; ;main.c: 69:         lcdData('n');
+[e ( _lcdData (1 -> -> 110 `ui `uc ]
+"70
+[; ;main.c: 70:         lcdData('e');
+[e ( _lcdData (1 -> -> 101 `ui `uc ]
+"71
+[; ;main.c: 71:         lcdData(' ');
+[e ( _lcdData (1 -> -> 32 `ui `uc ]
+"72
+[; ;main.c: 72:         lcdData('d');
+[e ( _lcdData (1 -> -> 100 `ui `uc ]
+"73
+[; ;main.c: 73:         lcdData('e');
+[e ( _lcdData (1 -> -> 101 `ui `uc ]
+"74
+[; ;main.c: 74:         lcdData(' ');
+[e ( _lcdData (1 -> -> 32 `ui `uc ]
+"75
+[; ;main.c: 75:         lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"76
+[; ;main.c: 76:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"77
+[; ;main.c: 77:         lcdData('i');
+[e ( _lcdData (1 -> -> 105 `ui `uc ]
+"78
+[; ;main.c: 78:     }
+}
+"80
+[; ;main.c: 80:     lcdPosition(2, 0);
+[e ( _lcdPosition (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"81
+[; ;main.c: 81:     {
+{
+"82
+[; ;main.c: 82:         lcdData('3');
+[e ( _lcdData (1 -> -> 51 `ui `uc ]
+"83
+[; ;main.c: 83:         lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"84
+[; ;main.c: 84:         lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"85
+[; ;main.c: 85:         lcdData('i');
+[e ( _lcdData (1 -> -> 105 `ui `uc ]
+"86
+[; ;main.c: 86:         lcdData('n');
+[e ( _lcdData (1 -> -> 110 `ui `uc ]
+"87
+[; ;main.c: 87:         lcdData('g');
+[e ( _lcdData (1 -> -> 103 `ui `uc ]
+"88
+[; ;main.c: 88:         lcdData('u');
+[e ( _lcdData (1 -> -> 117 `ui `uc ]
+"89
+[; ;main.c: 89:         lcdData('i');
+[e ( _lcdData (1 -> -> 105 `ui `uc ]
+"90
+[; ;main.c: 90:         lcdData('c');
+[e ( _lcdData (1 -> -> 99 `ui `uc ]
+"91
+[; ;main.c: 91:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"92
+[; ;main.c: 92:     }
+}
+"94
+[; ;main.c: 94:     lcdPosition(3, 0);
+[e ( _lcdPosition (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"95
+[; ;main.c: 95:     {
+{
+"96
+[; ;main.c: 96:         lcdData('4');
+[e ( _lcdData (1 -> -> 52 `ui `uc ]
+"97
+[; ;main.c: 97:         lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"98
+[; ;main.c: 98:         lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"99
+[; ;main.c: 99:         lcdData('r');
+[e ( _lcdData (1 -> -> 114 `ui `uc ]
+"100
+[; ;main.c: 100:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"101
+[; ;main.c: 101:         lcdData('n');
+[e ( _lcdData (1 -> -> 110 `ui `uc ]
+"102
+[; ;main.c: 102:         lcdData('g');
+[e ( _lcdData (1 -> -> 103 `ui `uc ]
+"103
+[; ;main.c: 103:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"105
+[; ;main.c: 105:     }
+}
+"107
+[; ;main.c: 107: }
+[e :UE 2 ]
+}
+"109
+[; ;main.c: 109: void impressaoponto(void) {
+[v _impressaoponto `(v ~T0 @X0 1 ef ]
+{
+[e :U _impressaoponto ]
+[f ]
+"110
+[; ;main.c: 110:     lcdInit();
+[e ( _lcdInit ..  ]
+"111
+[; ;main.c: 111:     lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"112
+[; ;main.c: 112:     {
+{
+"113
+[; ;main.c: 113:         lcdData('7');
+[e ( _lcdData (1 -> -> 55 `ui `uc ]
+"114
+[; ;main.c: 114:         lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"115
+[; ;main.c: 115:         lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"116
+[; ;main.c: 116:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"117
+[; ;main.c: 117:         lcdData('l');
+[e ( _lcdData (1 -> -> 108 `ui `uc ]
+"118
+[; ;main.c: 118:         lcdData(' ');
+[e ( _lcdData (1 -> -> 32 `ui `uc ]
+"119
+[; ;main.c: 119:         lcdData('p');
+[e ( _lcdData (1 -> -> 112 `ui `uc ]
+"120
+[; ;main.c: 120:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"121
+[; ;main.c: 121:         lcdData('s');
+[e ( _lcdData (1 -> -> 115 `ui `uc ]
+"122
+[; ;main.c: 122:         lcdData('s');
+[e ( _lcdData (1 -> -> 115 `ui `uc ]
+"123
+[; ;main.c: 123:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"124
+[; ;main.c: 124:         lcdData('d');
+[e ( _lcdData (1 -> -> 100 `ui `uc ]
+"125
+[; ;main.c: 125:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"126
+[; ;main.c: 126:     }
+}
+"128
+[; ;main.c: 128:     lcdPosition(1, 0);
+[e ( _lcdPosition (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"129
+[; ;main.c: 129:     {
+{
+"130
+[; ;main.c: 130:         lcdData('8');
+[e ( _lcdData (1 -> -> 56 `ui `uc ]
+"131
+[; ;main.c: 131:         lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"132
+[; ;main.c: 132:         lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"133
+[; ;main.c: 133:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"134
+[; ;main.c: 134:         lcdData(' ');
+[e ( _lcdData (1 -> -> 32 `ui `uc ]
+"135
+[; ;main.c: 135:         lcdData('p');
+[e ( _lcdData (1 -> -> 112 `ui `uc ]
+"136
+[; ;main.c: 136:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"137
+[; ;main.c: 137:         lcdData('n');
+[e ( _lcdData (1 -> -> 110 `ui `uc ]
+"138
+[; ;main.c: 138:         lcdData('t');
+[e ( _lcdData (1 -> -> 116 `ui `uc ]
+"139
+[; ;main.c: 139:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"140
+[; ;main.c: 140:     }
+}
+"141
+[; ;main.c: 141:     lcdPosition(2, 0);
+[e ( _lcdPosition (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"142
+[; ;main.c: 142:     {
+{
+"143
+[; ;main.c: 143:         lcdData('9');
+[e ( _lcdData (1 -> -> 57 `ui `uc ]
+"144
+[; ;main.c: 144:         lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"145
+[; ;main.c: 145:         lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"146
+[; ;main.c: 146:         lcdData('e');
+[e ( _lcdData (1 -> -> 101 `ui `uc ]
+"147
+[; ;main.c: 147:         lcdData('m');
+[e ( _lcdData (1 -> -> 109 `ui `uc ]
+"148
+[; ;main.c: 148:         lcdData(' ');
+[e ( _lcdData (1 -> -> 32 `ui `uc ]
+"149
+[; ;main.c: 149:         lcdData('p');
+[e ( _lcdData (1 -> -> 112 `ui `uc ]
+"150
+[; ;main.c: 150:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"151
+[; ;main.c: 151:         lcdData('s');
+[e ( _lcdData (1 -> -> 115 `ui `uc ]
+"152
+[; ;main.c: 152:         lcdData('s');
+[e ( _lcdData (1 -> -> 115 `ui `uc ]
+"153
+[; ;main.c: 153:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"154
+[; ;main.c: 154:         lcdData('d');
+[e ( _lcdData (1 -> -> 100 `ui `uc ]
+"155
+[; ;main.c: 155:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"156
+[; ;main.c: 156:     }
+}
+"158
+[; ;main.c: 158: }
+[e :UE 3 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"160
+[; ;main.c: 160: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"161
+[; ;main.c: 161:     unsigned long int contipo = 0;
+[v _contipo `ul ~T0 @X0 1 a ]
+[e = _contipo -> -> -> 0 `i `l `ul ]
+"162
+[; ;main.c: 162:     unsigned long int contponto = 0;
+[v _contponto `ul ~T0 @X0 1 a ]
+[e = _contponto -> -> -> 0 `i `l `ul ]
+"163
+[; ;main.c: 163:     unsigned long int cont = 0;
+[v _cont `ul ~T0 @X0 1 a ]
+[e = _cont -> -> -> 0 `i `l `ul ]
+"164
+[; ;main.c: 164:     unsigned int tecla = 16;
+[v _tecla `ui ~T0 @X0 1 a ]
+[e = _tecla -> -> 16 `i `ui ]
+"165
+[; ;main.c: 165:     unsigned int teclay = 16;
+[v _teclay `ui ~T0 @X0 1 a ]
+[e = _teclay -> -> 16 `i `ui ]
+"166
+[; ;main.c: 166:     unsigned char posicao, aux, i;
+[v _posicao `uc ~T0 @X0 1 a ]
+[v _aux `uc ~T0 @X0 1 a ]
+[v _i `uc ~T0 @X0 1 a ]
+"167
+[; ;main.c: 167:     unsigned char k, j;
+[v _k `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
+"169
+[; ;main.c: 169:     (*(volatile __near unsigned char*)0xF95) = 0X00;
+[e = *U -> -> 3989 `i `*VNuc -> -> 0 `i `uc ]
+"170
+[; ;main.c: 170:     (*(volatile __near unsigned char*)0xF83) = 0X00;
+[e = *U -> -> 3971 `i `*VNuc -> -> 0 `i `uc ]
+"172
+[; ;main.c: 172:     inicio();
+[e ( _inicio ..  ]
+"173
+[; ;main.c: 173:     kpInit();
+[e ( _kpInit ..  ]
+"174
+[; ;main.c: 174:     impressao();
+[e ( _impressao ..  ]
+"175
+[; ;main.c: 175:     for (;;) {
+{
+[e :U 5 ]
+{
+"177
+[; ;main.c: 177:         kpDebounce();
+[e ( _kpDebounce ..  ]
+"179
+[; ;main.c: 179:         if (kpRead() != tecla) {
+[e $ ! != ( _kpRead ..  _tecla 8  ]
+{
+"180
+[; ;main.c: 180:             tecla = kpRead();
+[e = _tecla ( _kpRead ..  ]
+"182
+[; ;main.c: 182:             if (((tecla) & (1<<3))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 3 `i `ui -> -> 0 `i `ui 9  ]
+{
+"183
+[; ;main.c: 183:                 contipo = 10;
+[e = _contipo -> -> -> 10 `i `l `ul ]
+"184
+[; ;main.c: 184:             }
+}
+[e :U 9 ]
+"185
+[; ;main.c: 185:             if (((tecla) & (1<<7))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 7 `i `ui -> -> 0 `i `ui 10  ]
+{
+"186
+[; ;main.c: 186:                 contipo = 7.5;
+[e = _contipo -> .7.5 `ul ]
+"187
+[; ;main.c: 187:             }
+}
+[e :U 10 ]
+"188
+[; ;main.c: 188:             if (((tecla) & (1<<11))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 11 `i `ui -> -> 0 `i `ui 11  ]
+{
+"189
+[; ;main.c: 189:                 contipo = 8;
+[e = _contipo -> -> -> 8 `i `l `ul ]
+"190
+[; ;main.c: 190:             }
+}
+[e :U 11 ]
+"191
+[; ;main.c: 191:             if (((tecla) & (1<<2))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 2 `i `ui -> -> 0 `i `ui 12  ]
+{
+"192
+[; ;main.c: 192:                 contipo = 9;
+[e = _contipo -> -> -> 9 `i `l `ul ]
+"193
+[; ;main.c: 193:             }
+}
+[e :U 12 ]
+"194
+[; ;main.c: 194:         }
+}
+[e :U 8 ]
+"196
+[; ;main.c: 196:         if (contipo != 0) {
+[e $ ! != _contipo -> -> -> 0 `i `l `ul 13  ]
+{
+"198
+[; ;main.c: 198:             kpInit();
+[e ( _kpInit ..  ]
+"199
+[; ;main.c: 199:             impressaoponto();
+[e ( _impressaoponto ..  ]
+"200
+[; ;main.c: 200:             for (;;) {
+{
+[e :U 14 ]
+{
+"201
+[; ;main.c: 201:             kpDebounce();
+[e ( _kpDebounce ..  ]
+"202
+[; ;main.c: 202:             if (kpRead() != teclay) {
+[e $ ! != ( _kpRead ..  _teclay 17  ]
+{
+"203
+[; ;main.c: 203:                 teclay = kpRead();
+[e = _teclay ( _kpRead ..  ]
+"205
+[; ;main.c: 205:                 if (((teclay) & (1<<1))) {
+[e $ ! != & _teclay -> << -> 1 `i -> 1 `i `ui -> -> 0 `i `ui 18  ]
+{
+"206
+[; ;main.c: 206:                     contponto = 2;
+[e = _contponto -> -> -> 2 `i `l `ul ]
+"207
+[; ;main.c: 207:                 }
+}
+[e :U 18 ]
+"208
+[; ;main.c: 208:                 if (((teclay) & (1<<5))) {
+[e $ ! != & _teclay -> << -> 1 `i -> 5 `i `ui -> -> 0 `i `ui 19  ]
+{
+"209
+[; ;main.c: 209:                     contponto = 3;
+[e = _contponto -> -> -> 3 `i `l `ul ]
+"210
+[; ;main.c: 210:                 }
+}
+[e :U 19 ]
+"211
+[; ;main.c: 211:                 if (((teclay) & (1<<9))) {
+[e $ ! != & _teclay -> << -> 1 `i -> 9 `i `ui -> -> 0 `i `ui 20  ]
+{
+"212
+[; ;main.c: 212:                     contponto = 4;
+[e = _contponto -> -> -> 4 `i `l `ul ]
+"213
+[; ;main.c: 213:                 }
+}
+[e :U 20 ]
+"214
+[; ;main.c: 214:             }
+}
+[e :U 17 ]
+"216
+[; ;main.c: 216:         if (contponto != 0) {
+[e $ ! != _contponto -> -> -> 0 `i `l `ul 21  ]
+{
+"217
+[; ;main.c: 217:         cont = (contipo * contponto) * 6000;
+[e = _cont * * _contipo _contponto -> -> -> 6000 `i `l `ul ]
+"218
+[; ;main.c: 218:         lcdInit();
+[e ( _lcdInit ..  ]
+"220
+[; ;main.c: 220:         (*(volatile __near unsigned char*)0xF95) = 0X00;
+[e = *U -> -> 3989 `i `*VNuc -> -> 0 `i `uc ]
+"221
+[; ;main.c: 221:         (*(volatile __near unsigned char*)0xF83) = 0X00;
+[e = *U -> -> 3971 `i `*VNuc -> -> 0 `i `uc ]
+"222
+[; ;main.c: 222:         for(;;){
+{
+[e :U 22 ]
+{
+"223
+[; ;main.c: 223:         lcdPosition(1, 3);
+[e ( _lcdPosition (2 , -> -> 1 `i `uc -> -> 3 `i `uc ]
+"224
+[; ;main.c: 224:         lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"225
+[; ;main.c: 225:         lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"226
+[; ;main.c: 226:         lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"227
+[; ;main.c: 227:         lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"228
+[; ;main.c: 228:         lcdData('H');
+[e ( _lcdData (1 -> -> 72 `ui `uc ]
+"229
+[; ;main.c: 229:         lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"230
+[; ;main.c: 230:         lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"231
+[; ;main.c: 231:         lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"232
+[; ;main.c: 232:         lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"234
+[; ;main.c: 234:         while (cont > 0){
+[e $U 25  ]
+[e :U 26 ]
+{
+"235
+[; ;main.c: 235:             cont--;
+[e -- _cont -> -> -> 1 `i `l `ul ]
+"236
+[; ;main.c: 236:             lcdPosition(2, 5);
+[e ( _lcdPosition (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+"238
+[; ;main.c: 238:             lcdData((cont / 60000) % 6 + 48);
+[e ( _lcdData (1 -> + % / _cont -> -> 60000 `l `ul -> -> -> 6 `i `l `ul -> -> -> 48 `i `l `ul `uc ]
+"239
+[; ;main.c: 239:             lcdData((cont / 6000) % 10 + 48);
+[e ( _lcdData (1 -> + % / _cont -> -> -> 6000 `i `l `ul -> -> -> 10 `i `l `ul -> -> -> 48 `i `l `ul `uc ]
+"240
+[; ;main.c: 240:             lcdData(':');
+[e ( _lcdData (1 -> -> 58 `ui `uc ]
+"241
+[; ;main.c: 241:             lcdData((cont / 1000) % 6 + 48);
+[e ( _lcdData (1 -> + % / _cont -> -> -> 1000 `i `l `ul -> -> -> 6 `i `l `ul -> -> -> 48 `i `l `ul `uc ]
+"242
+[; ;main.c: 242:             lcdData((cont / 100) % 10 + 48);
+[e ( _lcdData (1 -> + % / _cont -> -> -> 100 `i `l `ul -> -> -> 10 `i `l `ul -> -> -> 48 `i `l `ul `uc ]
+"245
+[; ;main.c: 245:            pwmInit();
+[e ( _pwmInit ..  ]
+"246
+[; ;main.c: 246:            pwmSet1(96);
+[e ( _pwmSet1 (1 -> -> 96 `i `uc ]
+"247
+[; ;main.c: 247:         }
+}
+[e :U 25 ]
+"234
+[; ;main.c: 234:         while (cont > 0){
+[e $ > _cont -> -> -> 0 `i `l `ul 26  ]
+[e :U 27 ]
+"249
+[; ;main.c: 249:             (*(volatile __near unsigned char*)0xF95) = 0b00000000;
+[e = *U -> -> 3989 `i `*VNuc -> -> 0 `i `uc ]
+"250
+[; ;main.c: 250:             posicao = 0b00000000;
+[e = _posicao -> -> 0 `i `uc ]
+"251
+[; ;main.c: 251:             for (i = 0; i < 9; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 9 `i 28  ]
+[e $U 29  ]
+[e :U 28 ]
+{
+"252
+[; ;main.c: 252:             (*(volatile __near unsigned char*)0xF83) = posicao;
+[e = *U -> -> 3971 `i `*VNuc _posicao ]
+"253
+[; ;main.c: 253:             tempo(3);
+[e ( _tempo (1 -> -> 3 `i `uc ]
+"254
+[; ;main.c: 254:             aux = posicao + 1;
+[e = _aux -> + -> _posicao `i -> 1 `i `uc ]
+"255
+[; ;main.c: 255:             posicao = posicao + aux;
+[e = _posicao -> + -> _posicao `i -> _aux `i `uc ]
+"256
+[; ;main.c: 256:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 9 `i 28  ]
+[e :U 29 ]
+}
+"258
+[; ;main.c: 258:         if(cont==0){
+[e $ ! == _cont -> -> -> 0 `i `l `ul 31  ]
+{
+"259
+[; ;main.c: 259:         pwmSet1(0);
+[e ( _pwmSet1 (1 -> -> 0 `i `uc ]
+"260
+[; ;main.c: 260:         lcdInit();
+[e ( _lcdInit ..  ]
+"262
+[; ;main.c: 262:         pwmFrequency(10000);
+[e ( _pwmFrequency (1 -> -> 10000 `i `ui ]
+"264
+[; ;main.c: 264:         for (k = 0; k < 3; k++) {
+{
+[e = _k -> -> 0 `i `uc ]
+[e $ < -> _k `i -> 3 `i 32  ]
+[e $U 33  ]
+[e :U 32 ]
+{
+"265
+[; ;main.c: 265:             for (j = 1; j > 0; j = j * 2) {
+{
+[e = _j -> -> 1 `i `uc ]
+[e $ > -> _j `i -> 0 `i 35  ]
+[e $U 36  ]
+[e :U 35 ]
+{
+"266
+[; ;main.c: 266:                 (((*(volatile __near unsigned char*)0xF94)) |= (1<<(1)));
+[e =| *U -> -> 3988 `i `*VNuc -> << -> 1 `i -> 1 `i `uc ]
+"267
+[; ;main.c: 267:                 (*(volatile __near unsigned char*)0xF81) = j;
+[e = *U -> -> 3969 `i `*VNuc _j ]
+"268
+[; ;main.c: 268:                 (*(volatile __near unsigned char*)0xF83) = j;
+[e = *U -> -> 3971 `i `*VNuc _j ]
+"269
+[; ;main.c: 269:                 atraso_ms(15);
+[e ( _atraso_ms (1 -> -> 15 `i `ui ]
+"270
+[; ;main.c: 270:             }
+}
+[e = _j -> * -> _j `i -> 2 `i `uc ]
+[e $ > -> _j `i -> 0 `i 35  ]
+[e :U 36 ]
+}
+"271
+[; ;main.c: 271:             (((*(volatile __near unsigned char*)0xF94)) &= ~(1<<(1)));
+[e =& *U -> -> 3988 `i `*VNuc -> ~ << -> 1 `i -> 1 `i `uc ]
+"272
+[; ;main.c: 272:         }
+}
+[e ++ _k -> -> 1 `i `uc ]
+[e $ < -> _k `i -> 3 `i 32  ]
+[e :U 33 ]
+}
+"274
+[; ;main.c: 274:         (*(volatile __near unsigned char*)0xF81) = 0;
+[e = *U -> -> 3969 `i `*VNuc -> -> 0 `i `uc ]
+"275
+[; ;main.c: 275:         (*(volatile __near unsigned char*)0xF83) = 0;
+[e = *U -> -> 3971 `i `*VNuc -> -> 0 `i `uc ]
+"279
+[; ;main.c: 279:         for(;;){
+{
+[e :U 38 ]
+{
+"280
+[; ;main.c: 280:         lcdPosition(1, 4);
+[e ( _lcdPosition (2 , -> -> 1 `i `uc -> -> 4 `i `uc ]
+"281
+[; ;main.c: 281:         {
+{
+"282
+[; ;main.c: 282:         lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"283
+[; ;main.c: 283:         lcdData('r');
+[e ( _lcdData (1 -> -> 114 `ui `uc ]
+"284
+[; ;main.c: 284:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"285
+[; ;main.c: 285:         lcdData('c');
+[e ( _lcdData (1 -> -> 99 `ui `uc ]
+"286
+[; ;main.c: 286:         lcdData('e');
+[e ( _lcdData (1 -> -> 101 `ui `uc ]
+"287
+[; ;main.c: 287:         lcdData('s');
+[e ( _lcdData (1 -> -> 115 `ui `uc ]
+"288
+[; ;main.c: 288:         lcdData('s');
+[e ( _lcdData (1 -> -> 115 `ui `uc ]
+"289
+[; ;main.c: 289:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"290
+[; ;main.c: 290:         }
+}
+"292
+[; ;main.c: 292:         lcdPosition(2, 3);
+[e ( _lcdPosition (2 , -> -> 2 `i `uc -> -> 3 `i `uc ]
+"293
+[; ;main.c: 293:         {
+{
+"294
+[; ;main.c: 294:         lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"295
+[; ;main.c: 295:         lcdData('i');
+[e ( _lcdData (1 -> -> 105 `ui `uc ]
+"296
+[; ;main.c: 296:         lcdData('n');
+[e ( _lcdData (1 -> -> 110 `ui `uc ]
+"297
+[; ;main.c: 297:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"298
+[; ;main.c: 298:         lcdData('l');
+[e ( _lcdData (1 -> -> 108 `ui `uc ]
+"299
+[; ;main.c: 299:         lcdData('i');
+[e ( _lcdData (1 -> -> 105 `ui `uc ]
+"300
+[; ;main.c: 300:         lcdData('z');
+[e ( _lcdData (1 -> -> 122 `ui `uc ]
+"301
+[; ;main.c: 301:         lcdData('a');
+[e ( _lcdData (1 -> -> 97 `ui `uc ]
+"302
+[; ;main.c: 302:         lcdData('d');
+[e ( _lcdData (1 -> -> 100 `ui `uc ]
+"303
+[; ;main.c: 303:         lcdData('o');
+[e ( _lcdData (1 -> -> 111 `ui `uc ]
+"305
+[; ;main.c: 305:         }
+}
+"306
+[; ;main.c: 306:         (*(volatile __near unsigned char*)0xF83) = 0xFF;
+[e = *U -> -> 3971 `i `*VNuc -> -> 255 `i `uc ]
+"307
+[; ;main.c: 307:         }
+}
+[e $U 38  ]
+[e :U 39 ]
+}
+"308
+[; ;main.c: 308:         }
+}
+[e :U 31 ]
+"309
+[; ;main.c: 309:         }
+}
+[e $U 22  ]
+[e :U 23 ]
+}
+"310
+[; ;main.c: 310:         }
+}
+[e :U 21 ]
+"311
+[; ;main.c: 311:         }
+}
+[e $U 14  ]
+[e :U 15 ]
+}
+"312
+[; ;main.c: 312:         }
+}
+[e :U 13 ]
+"313
+[; ;main.c: 313:         }
+}
+[e $U 5  ]
+[e :U 6 ]
+}
+"314
+[; ;main.c: 314:     }
+[e :UE 4 ]
+}
