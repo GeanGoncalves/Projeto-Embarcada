@@ -15,4 +15,5 @@
 + PicsimLab
 
 ### 🎬Vídeo explicativo sobre o funcionamento do programa:
-+ https://www.youtube.com/watch?v=2MuTabh2_Uk
++ [Vídeo](https://www.youtube.com/watch?v=2MuTabh2_Uk) <br/>
+
